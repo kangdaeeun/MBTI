@@ -1,17 +1,12 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import CreatePage from "./CreatePage";
-import UserProvider from "./contexts/UserProvider";
-import Layout from "./Layout";
-import UpdatePage from "./UpdatePage";
-import GlobalStyle from "./GlobalStyles";
-import ProtectedRoute from "./ProtectedRoute";
+import Router from "./Router";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
   return (
-    <UserProvider>
+    <>
       <GlobalStyle />
       <Router />
-    </UserProvider>
+    </>
   );
 }
 
