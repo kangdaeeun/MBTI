@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getTestResults } from "../api/testresults";
 import TestResultItem from "../components/TestResultItem";
 
-const TestResultList = () => {
+const TestResultList = ({user}) => {
   const [results, setResults] = useState([]);
   const fetchTestResults = async () => {
     const data = await getTestResults();
+    console.log(data);
     const filteredData = data.filter(
       (item) => item.visibility || item.userId === user.id
     );
     setResults(filteredData);
   };
+
+  useEffect(() => {
+    fetchTestResults();
+  }, []);
 
   return (
     <div>
@@ -21,7 +26,7 @@ const TestResultList = () => {
             key={result.id}
             result={result}
             user={user}
-            refreshResults={fetchResults}
+            refreshResults={fetchTestResults}
           />
         ))}
       </div>

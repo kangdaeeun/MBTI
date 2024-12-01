@@ -6,7 +6,7 @@ import {
 
 const TestResultItem = ({ result, user, refresResults }) => {
   const isOwner = result.userId === user.id;
-
+  console.log(user);
   const handleToggleVisibility = async () => {
     await updateTestResultVisibility(result.id, !result.visibility);
     await refresResults();

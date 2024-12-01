@@ -16,7 +16,7 @@ export const getTestResultsById = async (id) => {
   return response.data;
 };
 
-// 게시글 추가
+// 테스트 저장
 export const createTestResult = async (resultData) => {
   const response = await axios.post(`${API_URL}`, resultData);
   return response.data;

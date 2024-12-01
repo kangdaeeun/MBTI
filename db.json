@@ -1,19 +1,18 @@
 {
-  "posts": [
+  "testResults": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "userId": "qwe@qwe.com",
+      "nickname": "1234",
+      "result": "ESTJ",
+      "visibility": true,
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "userId": "qwe@qwe.com",
+      "nickname": "1234",
+      "result": "ESTJ",
+      "visibility": true,
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
