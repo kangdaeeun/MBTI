@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Signin from "../pages/Signin";
 
 const AuthForm = ({ mode, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -14,10 +15,12 @@ const AuthForm = ({ mode, onSubmit }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
   };
+  console.log(mode);
+  console.log(mode === "signup");
 
   return (
     <div>
@@ -38,7 +41,7 @@ const AuthForm = ({ mode, onSubmit }) => {
           placeholder="비밀번호를 입력해라"
           required
         />
-        {mode === "singup" && (
+        {mode === "signup" && (
           <input
             type="text"
             name="nickname"
@@ -49,7 +52,7 @@ const AuthForm = ({ mode, onSubmit }) => {
           />
         )}
         <button type={"submit"}>
-          {mode === "singup" ? "회원가입" : "로그인"}
+          {mode === "signup" ? "회원가입" : "로그인"}
         </button>
       </form>
     </div>

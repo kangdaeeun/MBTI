@@ -5,6 +5,8 @@ import Signin from "./pages/Signin";
 import Profile from "./pages/Profile";
 import { useState } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import TestPage from "./pages/TestPage";
+import Layout from "./components/Layout";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,6 +23,7 @@ function App() {
           ></Route>
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
             <Route path={"/profile"} element={<Profile user={user} />}></Route>
+            <Route path={"/test"} element={<TestPage user={user} />}></Route>
           </Route>
         </Routes>
       </Layout>
