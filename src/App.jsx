@@ -7,6 +7,7 @@ import { useState } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import TestPage from "./pages/TestPage";
 import Layout from "./components/Layout";
+import TestResultList from "./pages/TestResultList";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,10 @@ function App() {
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
             <Route path={"/profile"} element={<Profile user={user} />}></Route>
             <Route path={"/test"} element={<TestPage user={user} />}></Route>
+            <Route
+              path={"/results"}
+              element={<TestResultList user={user} />}
+            ></Route>
           </Route>
         </Routes>
       </Layout>
